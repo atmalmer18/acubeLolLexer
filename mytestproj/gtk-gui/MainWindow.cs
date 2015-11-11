@@ -47,6 +47,14 @@ public partial class MainWindow
 	
 	private global::Gtk.Label consoleLabel;
 	
+	private global::Gtk.VBox vbox3;
+	
+	private global::Gtk.HBox hbox1;
+	
+	private global::Gtk.Entry entry3;
+	
+	private global::Gtk.Button button1;
+	
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
 	
 	private global::Gtk.TextView consoleField;
@@ -233,6 +241,38 @@ public partial class MainWindow
 		w20.Expand = false;
 		w20.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
+		this.vbox3 = new global::Gtk.VBox ();
+		this.vbox3.Name = "vbox3";
+		this.vbox3.Spacing = 6;
+		// Container child vbox3.Gtk.Box+BoxChild
+		this.hbox1 = new global::Gtk.HBox ();
+		this.hbox1.Name = "hbox1";
+		this.hbox1.Spacing = 6;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.entry3 = new global::Gtk.Entry ();
+		this.entry3.CanFocus = true;
+		this.entry3.Name = "entry3";
+		this.entry3.IsEditable = true;
+		this.hbox1.Add (this.entry3);
+		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.entry3]));
+		w21.Position = 0;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.button1 = new global::Gtk.Button ();
+		this.button1.CanFocus = true;
+		this.button1.Name = "button1";
+		this.button1.UseUnderline = true;
+		this.button1.Label = global::Mono.Unix.Catalog.GetString ("Hit Enter");
+		this.hbox1.Add (this.button1);
+		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button1]));
+		w22.Position = 1;
+		w22.Expand = false;
+		w22.Fill = false;
+		this.vbox3.Add (this.hbox1);
+		global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox1]));
+		w23.Position = 0;
+		w23.Expand = false;
+		w23.Fill = false;
+		// Container child vbox3.Gtk.Box+BoxChild
 		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
@@ -240,18 +280,22 @@ public partial class MainWindow
 		this.consoleField = new global::Gtk.TextView ();
 		this.consoleField.CanFocus = true;
 		this.consoleField.Name = "consoleField";
+		this.consoleField.Editable = false;
 		this.GtkScrolledWindow.Add (this.consoleField);
-		this.vbox2.Add (this.GtkScrolledWindow);
-		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.GtkScrolledWindow]));
-		w22.Position = 2;
+		this.vbox3.Add (this.GtkScrolledWindow);
+		global::Gtk.Box.BoxChild w25 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.GtkScrolledWindow]));
+		w25.Position = 1;
+		this.vbox2.Add (this.vbox3);
+		global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.vbox3]));
+		w26.Position = 2;
 		this.vbox1.Add (this.vbox2);
-		global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox2]));
-		w23.Position = 2;
+		global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox2]));
+		w27.Position = 2;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 883;
+		this.DefaultWidth = 508;
 		this.DefaultHeight = 346;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);

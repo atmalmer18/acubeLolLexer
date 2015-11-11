@@ -9,12 +9,22 @@ using Gtk;
 
 public partial class MainWindow: Gtk.Window
 {
+	DrawingArea da = new DrawingArea();
+
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
 		box1.WidthRequest = 250;
 		box2.WidthRequest = 250;
 		box3.WidthRequest = 250;
+	}
+
+	void OnExposed (object o, ExposeEventArgs args) {
+		da.GdkWindow.DrawLine(da.Style.BaseGC(StateType.Normal), 0, 0, 400, 300);
+	}
+
+	void OnWinDelete (object o, DeleteEventArgs args){
+		Application.Quit ();
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -25,6 +35,18 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnExecuteButtonClicked (object sender, EventArgs e)
 	{
+		consoleField.Destroy ();
+		consoleField = new TextView ();
+
+
+
+		da.ExposeEvent += OnExposed;
+
+		Gdk.Color col = new Gdk.Color();
+		Gdk.Color.Parse("red", ref col);
+		consoleField.ModifyBg(StateType.Normal, col);
+		da.ModifyBg(StateType.Normal, col);
+
 		// lexeme table view
 		lexemeTree.Destroy();
 		lexemeTree = new Gtk.TreeView ();
