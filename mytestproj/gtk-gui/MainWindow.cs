@@ -9,7 +9,7 @@ public partial class MainWindow
 	
 	private global::Gtk.HBox hbox4;
 	
-	private global::Gtk.VBox vbox5;
+	private global::Gtk.VBox box1;
 	
 	private global::Gtk.HBox hbox2;
 	
@@ -21,7 +21,7 @@ public partial class MainWindow
 	
 	private global::Gtk.TextView textview3;
 	
-	private global::Gtk.VBox vbox6;
+	private global::Gtk.VBox box2;
 	
 	private global::Gtk.Label lexemeLabel;
 	
@@ -31,7 +31,7 @@ public partial class MainWindow
 	
 	private global::Gtk.TreeView lexemeTree;
 	
-	private global::Gtk.VBox vbox7;
+	private global::Gtk.VBox box3;
 	
 	private global::Gtk.Label symbolTableLabel;
 	
@@ -79,10 +79,10 @@ public partial class MainWindow
 		this.hbox4.Spacing = 15;
 		this.hbox4.BorderWidth = ((uint)(7));
 		// Container child hbox4.Gtk.Box+BoxChild
-		this.vbox5 = new global::Gtk.VBox ();
-		this.vbox5.Name = "vbox5";
-		this.vbox5.Spacing = 6;
-		// Container child vbox5.Gtk.Box+BoxChild
+		this.box1 = new global::Gtk.VBox ();
+		this.box1.Name = "box1";
+		this.box1.Spacing = 6;
+		// Container child box1.Gtk.Box+BoxChild
 		this.hbox2 = new global::Gtk.HBox ();
 		this.hbox2.Name = "hbox2";
 		this.hbox2.Homogeneous = true;
@@ -107,43 +107,42 @@ public partial class MainWindow
 		w3.Position = 1;
 		w3.Expand = false;
 		w3.Fill = false;
-		this.vbox5.Add (this.hbox2);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox5 [this.hbox2]));
+		this.box1.Add (this.hbox2);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.box1 [this.hbox2]));
 		w4.Position = 0;
 		w4.Expand = false;
 		w4.Fill = false;
-		// Container child vbox5.Gtk.Box+BoxChild
+		// Container child box1.Gtk.Box+BoxChild
 		this.GtkScrolledWindow1 = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
 		this.GtkScrolledWindow1.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow1.Gtk.Container+ContainerChild
 		this.textview3 = new global::Gtk.TextView ();
-		this.textview3.WidthRequest = 250;
 		this.textview3.CanFocus = true;
 		this.textview3.Name = "textview3";
 		this.GtkScrolledWindow1.Add (this.textview3);
-		this.vbox5.Add (this.GtkScrolledWindow1);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox5 [this.GtkScrolledWindow1]));
+		this.box1.Add (this.GtkScrolledWindow1);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.box1 [this.GtkScrolledWindow1]));
 		w6.Position = 1;
-		this.hbox4.Add (this.vbox5);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.vbox5]));
+		this.hbox4.Add (this.box1);
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.box1]));
 		w7.Position = 0;
 		w7.Expand = false;
 		w7.Fill = false;
 		// Container child hbox4.Gtk.Box+BoxChild
-		this.vbox6 = new global::Gtk.VBox ();
-		this.vbox6.Name = "vbox6";
-		this.vbox6.Spacing = 6;
-		// Container child vbox6.Gtk.Box+BoxChild
+		this.box2 = new global::Gtk.VBox ();
+		this.box2.Name = "box2";
+		this.box2.Spacing = 6;
+		// Container child box2.Gtk.Box+BoxChild
 		this.lexemeLabel = new global::Gtk.Label ();
 		this.lexemeLabel.Name = "lexemeLabel";
 		this.lexemeLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Lexemes");
-		this.vbox6.Add (this.lexemeLabel);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.lexemeLabel]));
+		this.box2.Add (this.lexemeLabel);
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.box2 [this.lexemeLabel]));
 		w8.Position = 0;
 		w8.Expand = false;
 		w8.Fill = false;
-		// Container child vbox6.Gtk.Box+BoxChild
+		// Container child box2.Gtk.Box+BoxChild
 		this.hbox5 = new global::Gtk.HBox ();
 		this.hbox5.Name = "hbox5";
 		this.hbox5.Homogeneous = true;
@@ -154,35 +153,34 @@ public partial class MainWindow
 		this.lexemeWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child lexemeWindow.Gtk.Container+ContainerChild
 		this.lexemeTree = new global::Gtk.TreeView ();
-		this.lexemeTree.WidthRequest = 250;
 		this.lexemeTree.CanFocus = true;
 		this.lexemeTree.Name = "lexemeTree";
 		this.lexemeWindow.Add (this.lexemeTree);
 		this.hbox5.Add (this.lexemeWindow);
 		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.lexemeWindow]));
 		w10.Position = 0;
-		this.vbox6.Add (this.hbox5);
-		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.hbox5]));
+		this.box2.Add (this.hbox5);
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.box2 [this.hbox5]));
 		w11.Position = 1;
-		this.hbox4.Add (this.vbox6);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.vbox6]));
+		this.hbox4.Add (this.box2);
+		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.box2]));
 		w12.Position = 1;
 		w12.Expand = false;
 		w12.Fill = false;
 		// Container child hbox4.Gtk.Box+BoxChild
-		this.vbox7 = new global::Gtk.VBox ();
-		this.vbox7.Name = "vbox7";
-		this.vbox7.Spacing = 6;
-		// Container child vbox7.Gtk.Box+BoxChild
+		this.box3 = new global::Gtk.VBox ();
+		this.box3.Name = "box3";
+		this.box3.Spacing = 6;
+		// Container child box3.Gtk.Box+BoxChild
 		this.symbolTableLabel = new global::Gtk.Label ();
 		this.symbolTableLabel.Name = "symbolTableLabel";
 		this.symbolTableLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Symbol Table");
-		this.vbox7.Add (this.symbolTableLabel);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox7 [this.symbolTableLabel]));
+		this.box3.Add (this.symbolTableLabel);
+		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.box3 [this.symbolTableLabel]));
 		w13.Position = 0;
 		w13.Expand = false;
 		w13.Fill = false;
-		// Container child vbox7.Gtk.Box+BoxChild
+		// Container child box3.Gtk.Box+BoxChild
 		this.hbox6 = new global::Gtk.HBox ();
 		this.hbox6.Name = "hbox6";
 		this.hbox6.Homogeneous = true;
@@ -193,18 +191,17 @@ public partial class MainWindow
 		this.symbolTableWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child symbolTableWindow.Gtk.Container+ContainerChild
 		this.symbolTableTree = new global::Gtk.TreeView ();
-		this.symbolTableTree.WidthRequest = 250;
 		this.symbolTableTree.CanFocus = true;
 		this.symbolTableTree.Name = "symbolTableTree";
 		this.symbolTableWindow.Add (this.symbolTableTree);
 		this.hbox6.Add (this.symbolTableWindow);
 		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.symbolTableWindow]));
 		w15.Position = 0;
-		this.vbox7.Add (this.hbox6);
-		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox7 [this.hbox6]));
+		this.box3.Add (this.hbox6);
+		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.box3 [this.hbox6]));
 		w16.Position = 1;
-		this.hbox4.Add (this.vbox7);
-		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.vbox7]));
+		this.hbox4.Add (this.box3);
+		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.box3]));
 		w17.Position = 2;
 		w17.Expand = false;
 		w17.Fill = false;

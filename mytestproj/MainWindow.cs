@@ -12,6 +12,9 @@ public partial class MainWindow: Gtk.Window
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
+		box1.WidthRequest = 250;
+		box2.WidthRequest = 250;
+		box3.WidthRequest = 250;
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)

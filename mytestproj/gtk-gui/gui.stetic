@@ -35,9 +35,8 @@
             <property name="Spacing">15</property>
             <property name="BorderWidth">7</property>
             <child>
-              <widget class="Gtk.VBox" id="vbox5">
+              <widget class="Gtk.VBox" id="box1">
                 <property name="MemberName" />
-                <property name="WidthRequest">250</property>
                 <property name="Spacing">6</property>
                 <child>
                   <widget class="Gtk.HBox" id="hbox2">
@@ -107,9 +106,8 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.VBox" id="vbox6">
+              <widget class="Gtk.VBox" id="box2">
                 <property name="MemberName" />
-                <property name="WidthRequest">250</property>
                 <property name="Spacing">6</property>
                 <child>
                   <widget class="Gtk.Label" id="lexemeLabel">
@@ -159,9 +157,8 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.VBox" id="vbox7">
+              <widget class="Gtk.VBox" id="box3">
                 <property name="MemberName" />
-                <property name="WidthRequest">250</property>
                 <property name="Spacing">6</property>
                 <child>
                   <widget class="Gtk.Label" id="symbolTableLabel">
