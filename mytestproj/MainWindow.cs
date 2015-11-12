@@ -36,16 +36,12 @@ public partial class MainWindow: Gtk.Window
 	protected void OnExecuteButtonClicked (object sender, EventArgs e)
 	{
 		consoleField.Destroy ();
-		consoleField = new TextView ();
+		consoleField = new TextView();
+		consoleField.Editable = false;
+		consoleField.CursorVisible = false;
 
-
-
-		da.ExposeEvent += OnExposed;
-
-		Gdk.Color col = new Gdk.Color();
-		Gdk.Color.Parse("red", ref col);
-		consoleField.ModifyBg(StateType.Normal, col);
-		da.ModifyBg(StateType.Normal, col);
+		consoleWindow.Add (consoleField);
+		consoleWindow.ShowAll ();
 
 		// lexeme table view
 		lexemeTree.Destroy();
@@ -134,6 +130,7 @@ public partial class MainWindow: Gtk.Window
 			} else if (strdeli.IsMatch (lexemes [lexLength])) {
 				classi.Add ("String Delimiter");
 			} 
+
 			lexLength++;
 		}
 
@@ -343,6 +340,28 @@ public partial class MainWindow: Gtk.Window
 
 		symbolTableWindow.ShowAll ();
 
+		InputDialog (lexemes, lexLength, mc);
+	}
+
+	protected void InputDialog (List<String> lexemes, int lexLength, MatchCollection mc){
+		Dictionary<String,String> inputList = new Dictionary<String,String>();
+		for(int i=0;i<mc.Count;i++){
+			inputList.Add (mc[i].ToString(),"null");
+		}
+
+		List<String> IOlist = new List<String>();
+		// Get all input and output instructions
+		int inputCount = 0;
+		for(int i=0;i<lexLength;i++){
+			if (lexemes [i] == "VISIBLE " && lexemes.Count != i+1){
+				IOlist.Add (lexemes[i+1]);
+				InsertToConsole (lexemes[i+1]);
+			}
+			if (lexemes [i] == "GIMMEH ") {
+				IOlist.Add (inputList[lexemes[i+1]]);
+				inputCount += 1;
+			}
+		}
 	}
 
 	protected void OnFileButtonClicked (object sender, EventArgs e)
@@ -377,5 +396,15 @@ public partial class MainWindow: Gtk.Window
 		}
 		//Don't forget to call Destroy() or the FileChooserDialog window won't get closed.
 		fc.Destroy();
+	}
+
+	protected void OnConsoleSubmitButtonClicked (object sender, EventArgs e)
+	{
+		InsertToConsole (consoleEntry.Text);
+	}
+
+	protected void InsertToConsole(object fieldDestination){
+		string toConcat = ">" + fieldDestination + "\n";
+		consoleField.Buffer.Text += toConcat;
 	}
 }

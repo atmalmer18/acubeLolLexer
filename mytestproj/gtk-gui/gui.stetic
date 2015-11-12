@@ -62,7 +62,6 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">Open file...</property>
                         <property name="UseUnderline">True</property>
-                        <signal name="Clicked" handler="OnFileButtonClicked" />
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -254,10 +253,11 @@
                     <property name="MemberName" />
                     <property name="Spacing">6</property>
                     <child>
-                      <widget class="Gtk.Entry" id="entry3">
+                      <widget class="Gtk.Entry" id="consoleEntry">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="IsEditable">True</property>
+                        <property name="InvisibleChar">●</property>
                       </widget>
                       <packing>
                         <property name="Position">0</property>
@@ -265,12 +265,13 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="Gtk.Button" id="button1">
+                      <widget class="Gtk.Button" id="consoleSubmitButton">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">Hit Enter</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnConsoleSubmitButtonClicked" />
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -288,7 +289,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                  <widget class="Gtk.ScrolledWindow" id="consoleWindow">
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
                     <child>
@@ -297,7 +298,10 @@
                         <property name="CanFocus">True</property>
                         <property name="ShowScrollbars">True</property>
                         <property name="Editable">False</property>
+                        <property name="CursorVisible">False</property>
+                        <property name="AcceptsTab">False</property>
                         <property name="Text" translatable="yes" />
+                        <property name="LeftMargin">5</property>
                       </widget>
                     </child>
                   </widget>
